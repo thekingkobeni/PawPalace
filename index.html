@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PawPalace</title>
+    <meta name="title" content="PawPalace">
+    <meta name="description" content="This is a pet hotel website for your cat and dog.">
+
+    <!--- Favicon Link -->
+    <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+    <!--- CSS Link -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+    <!-- Vue.js Link -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+
+    <!--- Google Font Link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Carter+One&family=Nunito+Sans:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body id="top">
+
+    <!--- #HEADER / NAVBAR -->
+
+    <div id="app">
+        <header class="header" data-header>
+            <div class="container">
+                <button class="nav-toggle-btn" aria-label="toggle manu" data-nav-toggler @click="toggleNavbar">
+                    <ion-icon :name="navTogglerIcon" aria-hidden="true" class="menu-icon"></ion-icon>
+                </button>
+    
+                <img src="./assets/images/logo.png" alt="">
+                <a href="#" class="logo">PawPalace</a>
+    
+                <nav class="navbar" :class="{ 'active': isNavbarActive }" data-navbar>
+                    <ul class="navbar-list">
+                        <li class="navbar-item">
+                            <a href="#home" class="navbar-link" @click="scrollToSection('home')" data-nav-link>Home</a>
+                        </li>
+                        <li class="navbar-item">
+                            <a href="#description" class="navbar-link" @click="scrollToSection('description')" data-nav-link>Descriptions</a>
+                        </li>
+                        <li class="navbar-item">
+                            <a href="#facility" class="navbar-link" @click="scrollToSection('facility')" data-nav-link>Facilities</a>
+                        </li>
+                        <li class="navbar-item">
+                            <a href="#article" class="navbar-link" @click="scrollToSection('article')" data-nav-link>Blog</a>
+                        </li>
+                        <li class="navbar-item">
+                            <a href="#requirement" class="navbar-link" @click="scrollToSection('requirement')" data-nav-link>Requirements</a>
+                        </li>
+                        <li class="navbar-item">
+                            <a href="#testimonial" class="navbar-link" @click="scrollToSection('testimonial')" data-nav-link>Testimonials</a>
+                        </li>
+                    </ul>
+                </nav>
+    
+                <div class="sosial-media">
+                    <a href="https://www.facebook.com/heryawan.yawan.1" class="action-btn" target="_blank" aria-label="facebook">
+                        <ion-icon name="logo-facebook" aria-hidden="true"></ion-icon>
+                    </a>
+                    <a href="https://www.instagram.com/hery4wn" class="action-btn" target="_blank" aria-label="instagram">
+                        <ion-icon name="logo-instagram" aria-hidden="true"></ion-icon>
+                    </a>
+                    <a href="https://wa.me/081248566252" class="action-btn" target="_blank" aria-label="whatsapp">
+                        <ion-icon name="logo-whatsapp" aria-hidden="true"></ion-icon>
+                    </a>
+                </div>
+            </div>
+        </header>
+    </div>
+
+    <main>
+        <article>
+            
+            <!--- #HEADLINE -->
+
+            <section class="section headline has-bg-image" id="home" aria-label="home" style="background-image: url('./assets/images/headline-banner.jpg')">
+                <div class="container">
+                    <h1 class="h1 headline-title">
+                        <span class="span">Comfy Home For</span> Your Anabul .
+                    </h1>
+                    <p class="headline-text">Leave your cats and dogs with us, and enjoy your trip without worry.</p>
+                    <a href="https://wa.me/081248566252" class="btn" target="_blank">Book Now</a>
+                </div>
+            </section>
+
+            <!--- #DESCRIPTION -->
+
+            <section class="description" id="description">
+                <h2 class="h2 section-title">
+                    <span class="span"><br>Desc</span>riptions.
+                </h2>
+                <div class="desc">
+                    <div class="description-img">
+                        <img src="./assets/images/desc-image.jpg" alt="Pet Shop">
+                    </div>
+                    <div class="text-box">
+                        <img src="./assets/images/desc-animation.png">
+                        <h2>PawPalace</h2>
+                        <br><hr>
+                        <p><br>PawPalace is a website that provides dog and cat boarding services, <br> 
+                        focusing on the comfort, safety, and well-being of pets, specifically <br>
+                        dogs and cats. PawPalace's main mission is to offer a comfortable, secure, <br>
+                        and caring environment for pets, allowing their owners to travel or deal with <br>
+                        emergency situations without worry.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!--- #FACILITY -->
+
+            <section class="facility" id="facility">
+                <div class="image-container">
+                    <img src="assets/images/facility-image.jpg" alt="Facility Image">
+                </div>
+                <div class="text-container">
+                    <h2 class="h2 section-title">
+                        <span class="span"><br>Our</span> Facilities.
+                    </h2>
+                    <div class="facilities" style="margin-top: 25px; ">
+                        <div class="facility-container" style="text-align: center;">
+                            <button class="facility-box" style="display: inline-block;
+                            width: 225px;
+                            height: 150px;
+                            margin: 5px;
+                            border: 1px solid #bcbcbc;
+                            border-radius: 15px;
+                            box-shadow: 5px 5px 10px rgb(229, 229, 229);">
+                            <div class="popup" style="border-radius: 5px;">Kandang ini dilengkapi dengan TV, litter box, mainan, dan tempat tidur yang nyaman.</div>
+                                <div class="facility-icon" style="width: 50px;
+                                height: 50px;
+                                margin: 10px auto;
+                                background-image: url('assets/images/facility-kandang.png');
+                                background-size: cover;"></div>
+                                <div class="facility-name" style="font-size: 16px; font-weight: bold;">Private Cage</div>
+                                <p style="font-size: 10px;">Kandang pribadi untuk kenyamanan.</p>
+                            </button>
+
+                            <button class="facility-box" style="display: inline-block;
+                            width: 225px;
+                            height: 150px;
+                            margin: 5px;
+                            border: 1px solid #bcbcbc;
+                            border-radius: 10px;
+                            box-shadow: 5px 5px 10px rgb(229, 229, 229);">
+                            <div class="popup" style="border-radius: 5px;">Penyediaan makanan berkualitas dan air sesuai dengan kebutuhan hewan peliharaan.</div>
+                                <div class="facility-icon" style="width: 50px;
+                                height: 50px;
+                                margin: 10px auto;
+                                background-image: url('assets/images/facility-makanan.png');
+                                background-size: cover;"></div>
+                                <div class="facility-name" style="font-size: 16px; font-weight: bold;">Food & Drink</div>
+                                <p style="font-size: 10px;">Makanan dan minuman bernutrisi.</p>
+                            </button>
+
+                            <button class="facility-box" style="display: inline-block;
+                            width: 225px;
+                            height: 150px;
+                            margin: 5px;
+                            border: 1px solid #bcbcbc;
+                            border-radius: 10px;
+                            box-shadow: 5px 5px 10px rgb(229, 229, 229);">
+                            <div class="popup" style="border-radius: 5px;">Mencakup aktivitas berjalan-jalan, atau interaksi dengan staf dan hewan peliharaan lainnya.</div>
+                                <div class="facility-icon" style="width: 50px;
+                                height: 50px;
+                                margin: 10px auto;
+                                background-image: url('assets/images/facility-bermain.png');
+                                background-size: cover;"></div>
+                                <div class="facility-name" style="font-size: 16px; font-weight: bold;">Fun Activities</div>
+                                <p style="font-size: 10px;">Aktivitas bermain di luar kandang.</p>
+                            </button>
+
+                            <br>
+
+                            <button class="facility-box" style="display: inline-block;
+                            width: 225px;
+                            height: 150px;
+                            margin: 5px;
+                            border: 1px solid #bcbcbc;
+                            border-radius: 10px;
+                            box-shadow: 5px 5px 10px rgb(229, 229, 229);">
+                            <div class="popup" style="border-radius: 5px;">Pemantauan kesehatan dasar dan perawatan kebersihan hewan peliharaan.</div>
+                                <div class="facility-icon" style="width: 50px;
+                                height: 50px;
+                                margin: 10px auto;
+                                background-image: url('assets/images/facility-kesehatan.png');
+                                background-size: cover;"></div>
+                                <div class="facility-name" style="font-size: 16px; font-weight: bold;">Basic Pet Care</div>
+                                <p style="font-size: 10px;">Perawatan kesehatan dan kebersihan hewan.</p>
+                            </button>
+
+                            <button class="facility-box" style="display: inline-block;
+                            width: 225px;
+                            height: 150px;
+                            margin: 5px;
+                            border: 1px solid #bcbcbc;
+                            border-radius: 10px;
+                            box-shadow: 5px 5px 10px rgb(229, 229, 229);">
+                            <div class="popup" style="border-radius: 5px;">Pemantauan terus-menerus oleh staf untuk menghindari hal yang tidak diinginkan.</div>
+                                <div class="facility-icon" style="width: 50px;
+                                height: 50px;
+                                margin: 10px auto;
+                                background-image: url('assets/images/facility-cctv.png');
+                                background-size: cover;"></div>
+                                <div class="facility-name" style="font-size: 16px; font-weight: bold;">24 Hour CCTV</div>
+                                <p style="font-size: 10px;">Pengawasan CCTV dan alarm berbahaya.</p>
+                            </button>
+                            
+                            <button class="facility-box" style="display: inline-block;
+                            width: 225px;
+                            height: 150px;
+                            margin: 5px;
+                            border: 1px solid #bcbcbc;
+                            border-radius: 10px;
+                            box-shadow: 5px 5px 10px rgb(229, 229, 229);">
+                            <div class="popup" style="border-radius: 5px; font-size: 11px;">Pemberian pembaruan teratur kepada pemilik mengenai kesejahteraan dan aktivitas hewan peliharaan selama masa penitipan.</div>
+                                <div class="facility-icon" style="width: 50px;
+                                height: 50px;
+                                margin: 10px auto;
+                                background-image: url('assets/images/facility-kontak.png');
+                                background-size: cover;"></div>
+                                <div class="facility-name" style="font-size: 16px; font-weight: bold;">Intensive Contact</div>
+                                <p style="font-size: 10px;">Kontak intensif dengan pemilik.</p>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="button-container" style="margin-top: 50px; padding-left: 42%;">
+                        <a href="https://wa.me/081248566252" class="btn" target="_blank">Book Now</a>
+                    </div>
+                </div>
+                <div style="background-color: rgb(250, 180, 94); height: 300px"></div>
+            </section>
+
+            <!--- #ARTICLE -->
+
+            <section class="section article" id="article">
+                <div class="container">
+                    <ul class="grid-list">
+                        <li>
+                            <div class="article-card has-bg-image img-holder"
+                                style="background-image: url('./assets/images/article-banner-1.jpg'); --width: 540; --height: 374;">
+                                <p class="card-subtitle">Blog</p>
+                                <h3 class="h3 card-title">Advantages of <span class="span">Pet Boarding</span></h3>
+                                <a href="https://www.alidas.com.au/advantages-of-pet-boarding.html" class="btn" target="_blank">Read More</a>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="article-card has-bg-image img-holder"
+                                style="background-image: url('./assets/images/article-banner-2.jpg'); --width: 540; --height: 374;">
+                                <p class="card-subtitle">Blog</p>
+                                <h3 class="h3 card-title">The Basic Necessities of <span class="span">Proper Pet Care</span></h3>
+                                <a href="https://animalfoundation.com/whats-going-on/blog/basic-necessities-proper-pet-care#:~:text=Proper%20pet%20care%20is%20the,her%20health%20and%20well%2Dbeing." class="btn" target="_blank">Read More</a>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="article-card has-bg-image img-holder"
+                                style="background-image: url('./assets/images/article-banner-3.jpg'); --width: 540; --height: 374;">
+                                <p class="card-subtitle">Blog</p>
+                                <h3 class="h3 card-title">Essential Benefits of <span class="span">Grooming Your Pet</span></h3>
+                                <a href="https://collegeroadanimalhospital.com/blog/5-essential-benefits-of-grooming-your-pet/" class="btn" target="_blank">Read More</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!--- #REQUIREMENT -->
+
+            <section class="section requirement" id="requirement">
+                <div class="container">
+                    <img src="./assets/images/requirement-animation.png" width="122" height="136" loading="lazy" alt="" class="img">
+                    <h2 class="h2 section-title">
+                        <span class="span">Pet Care</span> Requirements.
+                    </h2>
+                    <ul class="grid-list">
+                        <li>
+                            <div class="requirement-card">
+                                <figure class="card-icon">
+                                    <img src="./assets/images/requirement-1.png" width="70" height="70" loading="lazy" alt="requirement icon">
+                                </figure>
+                                <h3 class="h3 card-title">01</h3>
+                                <p class="card-text">Animals are in healthy condition and do not have fleas. We will first check the condition of the dogs and cats when they arrive. The goal is to maintain the safety and health of dogs, cats and other animals.</p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="requirement-card">
+                                <figure class="card-icon">
+                                    <img src="./assets/images/requirement-2.png" width="70" height="70" loading="lazy" alt="requirement icon">
+                                </figure>
+                                <h3 class="h3 card-title">02</h3>
+                                <p class="card-text">If after checking there are lice or skin disease, special treatment must be carried out immediately when you arrive. And animals can still be left in a special room for care. So don't mix it with healthy things.</p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="requirement-card">
+                                <figure class="card-icon">
+                                    <img src="./assets/images/requirement-3.png" width="70" height="70" loading="lazy" alt="requirement icon">
+                                </figure>
+                                <h3 class="h3 card-title">03</h3>
+                                <p class="card-text">At times they can freely walk around and play with visitors/other animals without being tied up or caged unless there is a request to be caged or in certain situations.</p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="requirement-card">
+                                <figure class="card-icon">
+                                    <img src="./assets/images/requirement-4.png" width="70" height="70" loading="lazy" alt="requirement icon">
+                                </figure>
+                                <h3 class="h3 card-title">04</h3>
+                                <p class="card-text">Special equipment that may be needed may be brought such as food, snacks, vitamins, toys and so on.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!--- #SPECIAL PROGRAM -->
+
+            <section class="special-program has-bg-image" aria-label="special-program" style="background-image: url('./assets/images/special-program-bg.jpg')">
+                <div class="container">
+                    <figure class="special-program-banner">
+                        <img src="./assets/images/special-program-banner.png" width="900" height="660" loading="lazy" alt="cat" class="w-100">
+                    </figure>
+                    <div class="special-program-content">
+                        <img src="./assets/images/special-program-icon.png" width="120" height="35" loading="lazy" alt="pet boarding school" class="img">
+                        <h2 class="h2 section-title"><br>More than just staying overnight… <br>Let's try!</h2>
+                        <p class="section-text">For those of you who want your dog/cat to be better trained in character, mentality and obedience, you can take the Pet Boarding School. So they are not just entrusted with it, but can play while learning. So that when they go home they will be smarter, more energetic and less troublesome. Hehehehe...</p>
+                        <a href="#" class="btn">Find Out More</a>
+                    </div>
+                </div>
+            </section>
+
+            <!--- #TESTIMONIAL -->
+
+            <section class="testimonial" id="testimonial">
+                <h2 class="h2 section-title" style="padding-top: 5%;">
+                    <span class="span">Customer</span> Testimonials.
+                </h2>
+                <div id="carousel">
+                    <div class="carousel-slide" id="testimonial-1">
+                        <div class="testimonial-container">
+                            <img src="assets/images/testimonial-1.jpg" alt="Testimonial 1 Image" style="padding: 3%; width: 400px; height: 400px; border-radius: 50%; margin-left: 18%;">
+                            <h1>DINDA AROJO DOS SANTOS</h1>
+                            <p style="padding-bottom: 3%;">"Pelayanan di pet hotel ini sungguh luar biasa! Hewan peliharaan saya diberi perhatian <br>khusus dan dirawat dengan penuh kasih sayang oleh staf yang profesional."</p>
+                        </div>
+                    </div>
+                    <div class="carousel-slide" id="testimonial-2">
+                        <div class="testimonial-container">
+                            <img src="assets/images/testimonial-2.jpg" alt="Testimonial 2 Image" style="padding: 3%; width: 400px; height: 400px; border-radius: 50%; margin-left: 21%;">
+                            <h1>HERYAWAN</h1>
+                            <p style="padding-bottom: 3%;">"Tempat ini benar-benar nyaman untuk hewan peliharaan. Fasilitas yang disediakan sangat baik, <br>mulai dari kamar tidur yang bersih hingga area bermain yang aman dan menyenangkan."</p>
+                        </div>
+                    </div>
+                    <div class="carousel-slide" id="testimonial-3">
+                        <div class="testimonial-container">
+                            <img src="assets/images/testimonial-3.jpg" alt="Testimonial 3 Image" style="padding: 3%; width: 400px; height: 400px; border-radius: 50%; margin-left: 22%;">
+                            <h1>ANASTASYA</h1>
+                            <p style="padding-bottom: 3%;">"Sangat puas dengan pengalaman menginap di pet hotel ini. Selain pelayanan yang ramah, <br>hewan peliharaan saya terlihat bahagia dan sehat setelah menghabiskan waktu di sini. Terima kasih <br>atas perhatian dan keamanan yang diberikan."</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="carousel-btn" style="align-items: center; padding-bottom: 5%;">
+                    <button class="btn" onclick="plusSlides(-1)">&#10094;</button>
+                    <button class="btn" onclick="plusSlides(1)">&#10095;</button>
+                </div>
+            </section>
+
+        </article>
+    </main>
+
+    <!--- #FOOTER -->
+
+    <footer class="footer" style="background-image: url('./assets/images/footer-bg.jpg')">
+        <div class="footer-top section">
+            <div class="container">
+                <div class="footer-brand">
+                    <a href="#" class="logo">PawPalace</a>
+                    <p class="footer-text">If you have any question, please contact us at <a href="mailto:ichsanulabid.08@gmail.com" class="link">pawpalace@gmail.com</a></p>
+                    <ul class="contact-list">
+                        <li class="contact-item">
+                            <ion-icon name="location-outline" aria-hidden="true"></ion-icon>
+                            <address class="address">
+                                Jl. Geografi, Bulak Sumur, Kec. Mlati, Kabupaten Sleman, Daerah Istimewa Yogyakarta 55281
+                            </address>
+                        </li>
+                        <li class="contact-item">
+                            <ion-icon name="call-outline" aria-hidden="true"></ion-icon>
+                            <a href="tel:+6281997772333" class="contact-link">(+62) 819-9777-2333</a>
+                        </li>
+                    </ul>
+                    <ul class="social-list">
+                        <li>
+                            <a href="https://www.facebook.com/heryawan.yawan.1" class="social-link" target="_blank">
+                                <ion-icon name="logo-facebook"></ion-icon>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/hery4wn" class="social-link" target="_blank">
+                                <ion-icon name="logo-instagram"></ion-icon>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://wa.me/081248566252" class="social-link" target="_blank">
+                                <ion-icon name="logo-whatsapp"></ion-icon>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <ul class="footer-list">
+                    <li>
+                        <p class="footer-list-title">Links</p>
+                    </li>
+                    <li>
+                        <a href="#" class="footer-link">About Us</a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer-link">Find Us</a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer-link">Contact Us</a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer-link">FAQs</a>
+                    </li>
+                </ul>
+
+                <ul class="footer-list">
+                    <li>
+                        <p class="footer-list-title">Links</p>
+                    </li>
+                    <li>
+                        <a href="#" class="footer-link">Privacy Policy</a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer-link">Refund Policy</a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer-link">Help Center</a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer-link">Terms of Service</a>
+                    </li>
+                </ul>
+
+                <ul class="footer-list">
+                    <li>
+                        <p class="footer-list-title">Links</p>
+                    </li>
+                    <li>
+                        <a href="#" class="footer-link">Lorem Ipsum</a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer-link">Lorem Ipsum</a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer-link">Lorem Ipsum</a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer-link">Lorem Ipsum</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p class="copyright">&copy; 2023 Group 7 | UI/UX and Front-End Development. </a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!--- #Back to Top -->
+    <a href="#top" class="back-top-btn" aria-label="back to top" data-back-top-btn>
+        <ion-icon name="chevron-up" aria-hidden="true"></ion-icon>
+    </a>
+
+    <!--- JS Link -->
+    <script src="./assets/js/script.js" defer></script>
+
+    <!--- IonIcon Link -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    
+    <!-- Vue.js Script -->
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                isNavbarActive: false,
+                navTogglerIcon: 'menu-outline'
+            },
+            methods: {
+                // Function to show or hide the navbar
+                toggleNavbar: function () {
+                    this.isNavbarActive = !this.isNavbarActive;
+                    this.navTogglerIcon = this.isNavbarActive ? 'close-outline' : 'menu-outline';
+                },
+                // Function to scroll to a section of the page
+                scrollToSection: function (sectionId) {
+                    var element = document.getElementById(sectionId);
+                    if (element) {
+                        element.scrollIntoView({ behavior: 'smooth' });
+                        this.toggleNavbar(); // Close the navbar after clicking the link
+                    }
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>
